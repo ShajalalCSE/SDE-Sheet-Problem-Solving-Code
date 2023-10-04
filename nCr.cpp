@@ -2,6 +2,8 @@
 using namespace std;
 typedef long long ll;
 
+
+//it is print for one value of nth row and rth col;
 ll nCr(int n, int r){
 
     int res=1;
@@ -14,6 +16,25 @@ ll nCr(int n, int r){
 
 }
 
+// printing full pascal triangel using only row number.
+
+vector<int> pascal( int row ){
+
+    int res=1;
+    vector<int >ansRow;
+    ansRow.push_back(res);
+    for(int col=1;col<row;col++){
+        res*=(row-col);
+        res=res/col;
+
+        ansRow.push_back(res);
+    }
+
+    return ansRow;
+
+
+}
+
 
 int main(){
 
@@ -23,21 +44,9 @@ int main(){
     ll ans=nCr(n,r);
     cout<<ans<<endl;
 
+    // printing full pascal triangel using only row number.
+
+
+
 }
 
-
-// ll nCr(int n,int r){
-
-
-    // ll nominator=1,denomanator =1;
-    // for(int i=0;i<r;i++){
-    //     nominator*=(n-i);
-    //     denomanator*=(i+1);
-
-    // }
-
-    // ll res= nominator/denomanator;
-
-    // return res;
-
-//}
